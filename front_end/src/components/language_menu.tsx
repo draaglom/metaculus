@@ -2,12 +2,12 @@
 
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import classNames from "classnames";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { usePathname, useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 import { FC } from "react";
 
 import useSearchParams from "@/hooks/use_search_params";
-import { useLocale } from "next-intl";
-import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 type Props = {
   className?: string;

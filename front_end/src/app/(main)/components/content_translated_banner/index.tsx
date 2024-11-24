@@ -1,16 +1,17 @@
 "use client";
 
-import Link from "next/link";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { FC, useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import useSearchParams from "@/hooks/use_search_params";
+import { useTranslations } from "next-intl";
+import { FC, useEffect, useState } from "react";
 
-import Button from "@/components/ui/button";
-import GoogleTranslateAttribution from "./google_translate_attribution";
 import { useContentTranslatedBannerProvider } from "@/app/providers";
 import { SetOriginalLanguage as setOriginalLanguage } from "@/components/language_menu";
+import Button from "@/components/ui/button";
+import useSearchParams from "@/hooks/use_search_params";
+
+import GoogleTranslateAttribution from "./google_translate_attribution";
 
 const ContentTranslatedBanner: FC<{ forceVisible?: boolean }> = ({
   forceVisible = false,

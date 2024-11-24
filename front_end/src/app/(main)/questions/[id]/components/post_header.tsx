@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
+import { useContentTranslatedBannerProvider } from "@/app/providers";
 import { SharePostMenu, PostDropdownMenu } from "@/components/post_actions/";
 import Button from "@/components/ui/button";
 import {
@@ -17,7 +18,6 @@ import { TournamentType } from "@/types/projects";
 import PostApprovalModal from "./post_approval_modal";
 import PostSubscribeButton from "./subscribe_button";
 import { draftPost, submitPostForReview } from "../../actions";
-import { useContentTranslatedBannerProvider } from "@/app/providers";
 
 export default function PostHeader({
   post,

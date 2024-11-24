@@ -6,10 +6,10 @@ import { defaultDescription } from "@/constants/metadata";
 
 import FeedbackFloat from "./(home)/components/feedback_float";
 import Bulletins from "./components/bulletins";
+import ContentTranslatedBanner from "./components/content_translated_banner";
 import CookiesBanner from "./components/cookies_banner";
 import Footer from "./components/footer";
 import GlobalHeader from "./components/headers/global_header";
-import ContentTranslatedBanner from "./components/content_translated_banner";
 import { useContentTranslatedBannerProvider } from "../providers";
 
 config.autoAddCss = false;

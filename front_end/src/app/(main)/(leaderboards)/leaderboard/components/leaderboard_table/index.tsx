@@ -96,6 +96,7 @@ const LeaderboardTable: FC<Props> = ({
               if (entry.user && entry.user.id === userEntry?.user?.id) {
                 return (
                   <UserLeaderboardRow
+                    key={`ranking-row-${category}-${entry.user.id}`}
                     userEntry={userEntry}
                     year={year}
                     duration={duration}

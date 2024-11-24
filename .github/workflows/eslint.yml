@@ -1,0 +1,38 @@
+name: eslint
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - "main"
+
+concurrency:
+  # Cancel previous jobs
+  group: eslint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out repository
+        uses: actions/checkout@v4
+      - name: set up node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: front_end/.nvmrc
+          cache: npm
+          cache-dependency-path: front_end/package-lock.json
+      - name: install deps
+        run: npm ci
+        working-directory: front_end
+      - name: print eslint version
+        run: npx eslint -v
+        working-directory: front_end
+      - name: lint
+        run: npm run lint
+        working-directory: front_end
